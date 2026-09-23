@@ -1,4 +1,4 @@
 interface:
-  display_name: "OwnPost: Posts and threads"
-  short_description: "OwnPost Posts and threads workflows"
-  default_prompt: "Use $ownpost-posts to write and save a draft about my latest project."
+  display_name: "OwnPost: Write posts and threads"
+  short_description: "Turn a topic into a draft in your voice"
+  default_prompt: "Use $ownpost-posts to post about my latest project."

@@ -1,4 +1,4 @@
 interface:
-  display_name: "OwnPost: Approved X publishing"
-  short_description: "OwnPost Approved X publishing workflows"
-  default_prompt: "Use $ownpost-publish to check and execute the existing approved publication I selected."
+  display_name: "OwnPost: Publish approved work"
+  short_description: "Send selected owner-approved posts and replies"
+  default_prompt: "Use $ownpost-publish to publish this approved post."

@@ -29,7 +29,7 @@ for (const name of folders) {
     "\r\n",
     "\n",
   );
-  assert.match(name, /^ownpost-[a-z-]+$/);
+  assert.match(name, /^ownpost(?:-[a-z-]+)?$/);
   assert.ok(body.startsWith("---\n"), name + " needs frontmatter");
   assert.ok(
     body.includes("name: " + name + "\n"),
@@ -39,13 +39,21 @@ for (const name of folders) {
   for (const tool of coverage[name]) {
     assert.ok(body.includes("`" + tool + "`"), name + " omits " + tool);
   }
-  for (const match of body.matchAll(/\]\((references\/[^)]+)\)/g)) {
-    const reference = resolve(folder, match[1]);
-    assert.ok(
-      reference.startsWith(folder + sep),
-      "References must stay within each skill",
-    );
-    await access(reference);
+  for (const file of (await readdir(folder, { recursive: true })).filter(
+    (file) => file.endsWith(".md"),
+  )) {
+    const filePath = resolve(folder, file);
+    const markdown = await readFile(filePath, "utf8");
+    for (const match of markdown.matchAll(/\]\(([^)]+)\)/g)) {
+      const target = match[1].split("#")[0];
+      if (!target || /^[a-z]+:/i.test(target)) continue;
+      const reference = resolve(dirname(filePath), target);
+      assert.ok(
+        reference.startsWith(folder + sep),
+        name + " reference leaves its standalone installation: " + target,
+      );
+      await access(reference);
+    }
   }
   const metadata = await readFile(
     resolve(folder, "agents/openai.yaml"),

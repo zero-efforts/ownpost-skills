@@ -4,13 +4,24 @@ Agent skills for [OwnPost](https://ownpost.fyi): first-time setup, writing, plan
 
 ## Install
 
-You need Node.js/npm and Git. Choose the skills and agent interactively:
+You need Node.js/npm and Git. For the simplest setup, install the single OwnPost skill:
 
 ```sh
-npx skills add zero-efforts/ownpost-skills
+npx skills add zero-efforts/ownpost-skills --agent codex --global --skill ownpost --yes
 ```
 
-Install all 11 skills globally for Codex:
+The `ownpost` skill includes every workflow in its own folder. It works by itself; users do not need the specialist skills installed. Attach `$ownpost` and ask naturally:
+
+```text
+$ownpost Post about this: I released a faster search feature today.
+$ownpost Analyse this conversation and write a useful reply.
+$ownpost Analyse my posts and replies this week.
+$ownpost Turn this screenshot into a post and plan it for tomorrow.
+```
+
+It uses saved preferences, completes the requested preparation and saving steps, and asks only for blocking missing information. An analysis-only request stays read-only. A new post is saved privately; actual API sending still needs the server's approvals and publishing grant.
+
+If you prefer specialist tags, install all 12 skills globally for Codex:
 
 ```sh
 npx skills add zero-efforts/ownpost-skills --agent codex --global --skill '*' --yes
@@ -39,12 +50,14 @@ These commands use the [Vercel skills CLI](https://github.com/vercel-labs/skills
 5. Open a new agent session and invoke a skill. In Codex, start with:
 
 ```text
-$ownpost-setup Set up my preferences one question at a time.
+$ownpost Set up my preferences one question at a time.
 ```
 
 If a newly installed skill is missing, restart your agent. Each user supplies their own workspace connection. Installing skills grants no account access and does not enable X publishing.
 
 ## Skill catalog
+
+Start with [ownpost](skills/ownpost/SKILL.md) for every workflow. The following specialist skills remain optional shortcuts.
 
 | Skill                                                          | Use it to                                                                      |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------ |
@@ -70,7 +83,7 @@ $ownpost-analytics Record the visible metrics from this screenshot.
 $ownpost-run-assistant Process one due preparation job.
 ```
 
-The skills cover 78 MCP tools in the source inventory at release. Your connection's live schemas and permissions determine which tools are available.
+The main skill and 11 specialists cover 78 MCP tools in the source inventory at release. Your connection's live schemas and permissions determine which tools are available.
 
 ## Boundaries that matter
 
@@ -97,7 +110,7 @@ For setup, permissions, retries, and release maintenance, see [the guide](docs/g
 
 Edit one skill for one user workflow. Use current MCP schemas, retain publication and concurrency boundaries, and keep references inside the skill folder so individual installs remain usable.
 
-Run `npm test` before opening a pull request. No dependency installation is required for that validation. When the MCP inventory changes, update `tool-coverage.json` and compare it with OwnPost's actual `listMcpTools("full", true)` output.
+After changing a specialist, run `npm run build` to refresh the main skill's bundled references, then `npm test` before opening a pull request. No dependency installation is required for validation. When the MCP inventory changes, update `tool-coverage.json` and compare it with OwnPost's actual `listMcpTools("full", true)` output.
 
 ## License
 

@@ -2,13 +2,34 @@
 
 ## First use
 
-Run `npx skills add zero-efforts/ownpost-skills`, select the skills and your supported agent, and choose project or global installation. The [README](../README.md) has non-interactive commands and the complete catalog.
+Run `npx skills add zero-efforts/ownpost-skills --agent codex --global --skill ownpost --yes` to install the single entry skill. The [README](../README.md) has other agent options and the complete catalog.
 
-Skills are local instructions. Connect your private OwnPost MCP server separately, then invoke `$ownpost-setup` in Codex. The assistant will read current settings, ask one question at a time, and save only your answers. You may skip sections.
+Skills are local instructions. Connect your private OwnPost MCP server separately, then invoke `$ownpost` and ask for the task you want. For first-time preferences, ask it to set up your preferences; it will read existing choices, ask one question at a time, and save only your answers. You may skip sections.
 
 The [setup reference](../skills/ownpost-setup/references/setup.md) covers new hosting, credentials, connection checks, and troubleshooting. Use your own HTTPS workspace URL. Never use another person's server merely because they shared these skills.
 
-## Typical workflow
+## One tag, natural requests
+
+Use `$ownpost` for any of these. It chooses the necessary workflow internally; installing only this skill includes all its references.
+
+| Ask                                               | Result                                                                                |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Post about this, with supplied text or screenshot | Reads saved voice/preferences and saves one original draft.                           |
+| Write a thread and attach this photo              | Saves the requested thread and attaches the photo to the specified part.              |
+| Plan this draft for tomorrow                      | Reads real choices and saves a manual reminder in workspace time.                     |
+| Analyse this conversation and reply               | Reads the real conversation, chooses a useful angle, and saves a reply.               |
+| Analyse my replies this week                      | Reviews available reply wording, activity and delivery outcomes; reports data limits. |
+| Analyse this draft, do not change it              | Gives a critique without writing.                                                     |
+| Prepare today's news brief now                    | Creates/claims the requested job and completes supported outputs in the same session. |
+| Publish this approved job now                     | Checks capabilities and executes the existing eligible approval.                      |
+
+Ordinary requests do not start onboarding or ask again for saved preferences. Missing source text, an ambiguous target, or a missing server approval can still require your input. If part of a combined request is blocked, the skill finishes independent authorized steps and reports the remaining action.
+
+Reply analysis includes wording quality, manual reply activity and API delivery outcomes. Per-reply impressions, likes, engagement rates, and follower attribution are not available through the current MCP tools. Manual reply history and reply progress are workspace-wide; API reply opportunities are account-scoped. Original-post metric snapshots cannot store reply metrics.
+
+## Specialist shortcuts
+
+You can keep using these tags if you installed the corresponding optional specialist. With `$ownpost`, simply describe the same task:
 
 1. Use ownpost-setup for timezone, topics, audience, posting slots, and quiet hours.
 2. Use ownpost-ideas for selected sources and original suggestions.
@@ -47,9 +68,9 @@ This repository is the public source for installable skills. The OwnPost applica
 
 1. Update the relevant public skill and tool-coverage.json.
 2. Synchronize the app's development copy and run its MCP skill coverage test against the real tool inventory.
-3. Run `npm test` here.
+3. Run `npm run build` to refresh the standalone entry skill, then `npm test` here.
 4. Run `npx skills add . --list` to check discovery.
-5. Try a selected install in a temporary empty project using `--agent codex --skill ownpost-setup --yes`.
+5. Try a selected install in a temporary empty project using `--agent codex --skill ownpost --yes`.
 6. Commit and push the reviewed changes. Users can then update through the skills CLI.
 
 Validate realistic behavior in a test workspace: skip a setup section, retry the same draft ID, reconcile a stale post, handle a partially failing batch, complete a leased research job, reject an unapproved publication, and preserve an uncertain-send hold. Structural validation alone does not prove live publishing behavior.

@@ -1,11 +1,12 @@
 {
   "name": "ownpost-skills",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Installable OwnPost agent skills",
   "type": "module",
   "scripts": {
-    "test": "node scripts/validate.mjs"
+    "build": "node scripts/build-entrypoint.mjs",
+    "test": "node scripts/build-entrypoint.mjs --check && node scripts/validate.mjs"
   },
   "engines": {
     "node": ">=22"

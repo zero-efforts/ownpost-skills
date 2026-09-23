@@ -1,4 +1,5 @@
 {
+  "ownpost": [],
   "ownpost-setup": [
     "list_accounts",
     "get_personal_setup",

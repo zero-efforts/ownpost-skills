@@ -1,0 +1,4 @@
+interface:
+  display_name: "OwnPost"
+  short_description: "Write, reply, analyse, and plan with one skill"
+  default_prompt: "Use $ownpost to write and save a post about this."

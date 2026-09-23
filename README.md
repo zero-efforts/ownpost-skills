@@ -84,7 +84,7 @@ The skills cover 78 MCP tools in the source inventory at release. Your connectio
 ## Update and remove
 
 ```sh
-npx skills check
+npx skills list --global
 npx skills update
 npx skills remove ownpost-setup --agent codex --global
 ```

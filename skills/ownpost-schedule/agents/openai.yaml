@@ -1,0 +1,4 @@
+interface:
+  display_name: "OwnPost: Schedule and posting slots"
+  short_description: "OwnPost Schedule and posting slots workflows"
+  default_prompt: "Use $ownpost-schedule to plan my draft for the next available posting time."

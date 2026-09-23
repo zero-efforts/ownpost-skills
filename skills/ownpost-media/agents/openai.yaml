@@ -1,0 +1,4 @@
+interface:
+  display_name: "OwnPost: Post media"
+  short_description: "OwnPost Post media workflows"
+  default_prompt: "Use $ownpost-media to attach this image to the first part of my thread."

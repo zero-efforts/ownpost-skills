@@ -1,0 +1,99 @@
+{
+  "ownpost-setup": [
+    "list_accounts",
+    "get_personal_setup",
+    "save_personal_setup",
+    "get_notification_preferences",
+    "update_notification_preferences"
+  ],
+  "ownpost-posts": [
+    "get_today",
+    "list_posts",
+    "get_post",
+    "create_draft",
+    "update_post",
+    "archive_post",
+    "restore_post",
+    "move_post_to_drafts",
+    "skip_post",
+    "record_publication"
+  ],
+  "ownpost-schedule": [
+    "get_schedule_options",
+    "schedule_post",
+    "list_posting_slots",
+    "create_posting_slot",
+    "create_posting_slots",
+    "update_posting_slot",
+    "delete_posting_slot",
+    "delete_posting_slots"
+  ],
+  "ownpost-media": ["list_media", "attach_media"],
+  "ownpost-ideas": [
+    "get_inspiration",
+    "create_inspiration",
+    "create_image_inspiration",
+    "list_inspirations",
+    "update_inspiration",
+    "archive_inspiration",
+    "restore_inspiration",
+    "permanently_delete_inspiration",
+    "create_daily_content_plan",
+    "create_suggestion",
+    "list_suggestions",
+    "permanently_delete_suggestion"
+  ],
+  "ownpost-analytics": [
+    "match_performance_screenshot",
+    "record_metric_snapshot",
+    "list_post_metrics",
+    "get_performance_context",
+    "propose_learning_note"
+  ],
+  "ownpost-replies": [
+    "capture_reply_target",
+    "list_reply_targets",
+    "save_reply_draft",
+    "record_reply_publication"
+  ],
+  "ownpost-routines": [
+    "get_assistant_overview",
+    "save_assistant_routine",
+    "request_assistant_work"
+  ],
+  "ownpost-run-assistant": [
+    "get_assistant_context",
+    "claim_assistant_work",
+    "complete_assistant_work",
+    "fail_assistant_work"
+  ],
+  "ownpost-publish": [
+    "get_x_capabilities",
+    "list_reply_opportunities",
+    "claim_approved_reply",
+    "publish_approved_reply",
+    "fail_reply_work",
+    "list_publications",
+    "publish_approved_post",
+    "reschedule_approved_publication",
+    "cancel_publication",
+    "resume_publication"
+  ],
+  "ownpost-bulk": [
+    "create_drafts",
+    "update_posts",
+    "schedule_posts",
+    "archive_posts",
+    "restore_posts",
+    "move_posts_to_drafts",
+    "skip_posts",
+    "update_posting_slots",
+    "create_inspirations",
+    "update_inspirations",
+    "archive_inspirations",
+    "restore_inspirations",
+    "permanently_delete_inspirations",
+    "create_suggestions",
+    "permanently_delete_suggestions"
+  ]
+}

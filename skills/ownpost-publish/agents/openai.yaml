@@ -1,0 +1,4 @@
+interface:
+  display_name: "OwnPost: Approved X publishing"
+  short_description: "OwnPost Approved X publishing workflows"
+  default_prompt: "Use $ownpost-publish to check and execute the existing approved publication I selected."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OwnPost: Analytics and learning"
+  short_description: "OwnPost Analytics and learning workflows"
+  default_prompt: "Use $ownpost-analytics to review my measured posts and propose a writing lesson."

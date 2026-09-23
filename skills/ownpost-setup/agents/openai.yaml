@@ -1,0 +1,4 @@
+interface:
+  display_name: "OwnPost: First-time setup"
+  short_description: "OwnPost First-time setup workflows"
+  default_prompt: "Use $ownpost-setup to set up OwnPost with me, one question at a time."

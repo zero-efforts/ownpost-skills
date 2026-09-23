@@ -1,0 +1,4 @@
+interface:
+  display_name: "OwnPost: Manual reply preparation"
+  short_description: "OwnPost Manual reply preparation workflows"
+  default_prompt: "Use $ownpost-replies to prepare two reply options for this conversation."

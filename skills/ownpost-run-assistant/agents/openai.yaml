@@ -1,0 +1,4 @@
+interface:
+  display_name: "OwnPost: Run preparation work"
+  short_description: "OwnPost Run preparation work workflows"
+  default_prompt: "Use $ownpost-run-assistant to process one due OwnPost preparation job."

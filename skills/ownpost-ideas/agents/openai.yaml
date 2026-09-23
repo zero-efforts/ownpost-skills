@@ -1,0 +1,4 @@
+interface:
+  display_name: "OwnPost: Ideas and suggestions"
+  short_description: "OwnPost Ideas and suggestions workflows"
+  default_prompt: "Use $ownpost-ideas to turn this selected inspiration into three original suggestions."

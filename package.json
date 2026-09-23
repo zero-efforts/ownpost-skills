@@ -1,0 +1,14 @@
+{
+  "name": "ownpost-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Installable OwnPost agent skills",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/validate.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OwnPost: Routines and preparation jobs"
+  short_description: "OwnPost Routines and preparation jobs workflows"
+  default_prompt: "Use $ownpost-routines to set up a weekday news preparation routine for me."

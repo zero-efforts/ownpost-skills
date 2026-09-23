@@ -1,0 +1,4 @@
+interface:
+  display_name: "OwnPost: Bulk workspace changes"
+  short_description: "OwnPost Bulk workspace changes workflows"
+  default_prompt: "Use $ownpost-bulk to archive the selected drafts in one batch."

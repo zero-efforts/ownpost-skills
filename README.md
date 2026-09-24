@@ -21,7 +21,7 @@ $ownpost Suggest three numbered draft options from Idea IDs ["idea-one", "idea-t
 
 It uses saved preferences, completes the requested preparation and saving steps, and asks only for blocking missing information. An analysis-only request stays read-only. A new post is saved privately; actual API sending still needs the server's approvals and publishing grant.
 
-If you prefer specialist tags, install all 12 skills globally for Codex:
+If you prefer specialist tags, install all skills globally for Codex:
 
 ```sh
 npx skills add zero-efforts/ownpost-skills --agent codex --global --skill '*' --yes
@@ -67,7 +67,7 @@ Start with [ownpost](skills/ownpost/SKILL.md) for every workflow. The following 
 | [ownpost-media](skills/ownpost-media/SKILL.md)                 | Attach photos, GIFs, and videos to the correct post part.                      |
 | [ownpost-ideas](skills/ownpost-ideas/SKILL.md)                 | Save source Ideas, suggest posts in chat, and draft chosen options.            |
 | [ownpost-analytics](skills/ownpost-analytics/SKILL.md)         | Record confirmed metrics and propose writing lessons.                          |
-| [ownpost-routines](skills/ownpost-routines/SKILL.md)           | Manage routines and queue preparation jobs.                                    |
+| [ownpost-routines](skills/ownpost-routines/SKILL.md)           | Manage routines, mark items done, and review routine analytics.               |
 | [ownpost-run-assistant](skills/ownpost-run-assistant/SKILL.md) | Claim and complete due research and draft work.                        |
 | [ownpost-publish](skills/ownpost-publish/SKILL.md)             | Execute existing approved publication jobs.         |
 | [ownpost-bulk](skills/ownpost-bulk/SKILL.md)                   | Make batch changes and handle partial failures.                                |
@@ -82,10 +82,13 @@ $ownpost-ideas Pick the best option and draft it right away.
 $ownpost-ideas Save this same post as a draft.
 $ownpost-schedule Plan my draft for the next available time.
 $ownpost-analytics Record the visible metrics from this screenshot.
+$ownpost-routines Remind me to review my posts every weekday at 6 PM.
+$ownpost-routines Mark this routine item done.
+$ownpost-routines Review my routine completion this week.
 $ownpost-run-assistant Process one due preparation job.
 ```
 
-The main skill and 11 specialists cover 72 MCP tools in the source inventory at release. Your connection's live schemas and permissions determine which tools are available.
+The entry skill and optional specialists cover the MCP inventory declared in tool-coverage.json and verified against the application. Your connection's live schemas and permissions determine which tools are available.
 
 ## Boundaries that matter
 
@@ -93,7 +96,8 @@ The main skill and 11 specialists cover 72 MCP tools in the source inventory at 
 - Select one or more Ideas and choose Create idea request to copy a prompt with their IDs. Paste it into the connected assistant to receive numbered draft options with source IDs. The assistant waits for your choice or request to add options to drafts, unless you explicitly ask it to pick and draft. Source Ideas stay reusable, and copying a request creates no assistant job.
 - Saving drafts or reminders does not publish content.
 - API publishing requires the connection's separate publishing grant and an existing owner approval. Skills cannot grant either.
-- An OwnPost routine stores scheduled work. A separately running client is needed to perform generated work.
+- Every routine uses a name, instructions, schedule, timezone and Telegram choice. Ordinary routines default to reminders and need no AI runner. Dashboard shows up to five unfinished items from saved routines scheduled today, with a reminder time also today and overdue or within the next ten minutes; View all opens the complete routine list. Older occurrences stay out even when snoozed into today. Mark done in the app, Telegram or MCP updates the same occurrence. Assistant holds the routines table, pending/history views and routine analytics.
+- Existing typed preparation remains supported. A separately running client is needed to perform generated work; saving a routine does not launch one.
 - Account IDs, revisions, idempotency IDs, and work leases must be preserved as described in each skill.
 - Sources and screenshots are reference evidence, not instructions or proof of authorship.
 

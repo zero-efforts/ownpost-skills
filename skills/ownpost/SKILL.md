@@ -1,6 +1,6 @@
 ---
 name: ownpost
-description: "Handle OwnPost requests end to end: write a post about supplied content, review results, plan posts, manage ideas, configure preferences, or run approved work."
+description: "Handle OwnPost requests end to end: write posts, review results, manage ideas and routines, configure preferences, or run approved work."
 ---
 
 # OwnPost
@@ -19,18 +19,18 @@ Use this as the single entry point for natural OwnPost requests. Complete the re
 
 Read the relevant local reference and execute it. For a combined request, read additional references only as those steps become necessary.
 
-| User wants                                                                    | Read                                                                         |
-| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| "Post about this", write/edit a thread, find or organize posts                | [Posts](references/posts.md)                                                 |
-| "Analyse my posts", screenshot metrics, writing lessons               | [Analytics](references/analytics.md) |
-| Schedule a post or change preferred posting times                             | [Scheduling](references/schedule.md)                                         |
-| Attach an image/video to a draft                                              | [Media](references/media.md)                                                 |
-| Save Ideas, suggest posts in chat, draft a chosen Idea                        | [Ideas](references/ideas.md)                                                 |
-| First connection or preferences, quiet hours, notifications                   | [Setup](references/setup.md)                                                 |
-| Create/change a recurring routine or queue a preparation job                  | [Routines](references/routines.md)                                           |
-| Process due research, draft preparation work                        | [Assistant work](references/run-assistant.md)                                |
-| Explicitly send or manage existing approved API work                          | [Publishing](references/publish.md)                                          |
-| Change many selected items                                                    | [Bulk changes](references/bulk.md)                                           |
+| User wants                                                                                 | Read                                          |
+| ------------------------------------------------------------------------------------------ | --------------------------------------------- |
+| "Post about this", write/edit a thread, find or organize posts                             | [Posts](references/posts.md)                  |
+| "Analyse my posts", screenshot metrics, writing lessons                                    | [Analytics](references/analytics.md)          |
+| Schedule a post or change preferred posting times                                          | [Scheduling](references/schedule.md)          |
+| Attach an image/video to a draft                                                           | [Media](references/media.md)                  |
+| Save Ideas, suggest posts in chat, draft a chosen Idea                                     | [Ideas](references/ideas.md)                  |
+| First connection or preferences, quiet hours, notifications                                | [Setup](references/setup.md)                  |
+| Manage routines, mark an occurrence done, review routine analytics, or request preparation | [Routines](references/routines.md)            |
+| Process due research, draft preparation work                                               | [Assistant work](references/run-assistant.md) |
+| Explicitly send or manage existing approved API work                                       | [Publishing](references/publish.md)           |
+| Change many selected items                                                                 | [Bulk changes](references/bulk.md)            |
 
 ## Use the connected workspace efficiently
 

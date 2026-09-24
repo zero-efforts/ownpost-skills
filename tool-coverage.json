@@ -53,6 +53,7 @@
   "ownpost-routines": [
     "get_assistant_overview",
     "save_assistant_routine",
+    "update_assistant_occurrence",
     "request_assistant_work"
   ],
   "ownpost-run-assistant": [

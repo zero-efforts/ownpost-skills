@@ -24,6 +24,9 @@ Use `$ownpost` for any of these. It chooses the necessary workflow internally; i
 | Plan this draft for tomorrow                      | Reads real choices and saves a manual reminder in workspace time.                     |
 | Analyse this draft, do not change it              | Gives a critique without writing.                                                     |
 | Prepare today's post drafts now                    | Creates/claims the requested job and completes supported outputs in the same session. |
+| Remind me to review my posts every weekday at 6 PM | Saves an ordinary routine with a name, instructions, local schedule and Telegram choice. |
+| Mark this routine item done                        | Completes the selected occurrence with its current revision, shared with app and Telegram. |
+| Review my routine analytics                        | Reads aggregate due completion data and the seven-day table, not one page of history. |
 | Publish this approved job now                     | Checks capabilities and executes the existing eligible approval.                      |
 
 Ordinary requests do not start onboarding or ask again for saved preferences. Missing source text, an ambiguous target, or a missing server approval can still require your input. If part of a combined request is blocked, the skill finishes independent authorized steps and reports the remaining action.
@@ -41,6 +44,7 @@ You can keep using these tags if you installed the corresponding optional specia
 4. Use ownpost-schedule for manual reminders. A reminder is not API authorization.
 5. Publish manually, then report the actual publication. For API delivery, approve the content in OwnPost and use ownpost-publish only with the separate connection grant.
 6. Use ownpost-analytics to record real measurements and propose lessons for owner review.
+7. Use ownpost-routines for any recurring activity, occurrence completion and routine analytics. Assistant has one Add routine form and a routines table. Dashboard shows up to five unfinished items from saved routines scheduled today, with a reminder time also today and overdue or within ten minutes; View all opens the complete list. Older occurrences stay out even when snoozed into today. Completed and skipped items remain in Assistant history.
 
 
 ## Access and troubleshooting
@@ -57,7 +61,8 @@ You can keep using these tags if you installed the corresponding optional specia
 | Missing publishing tools      | Check the separate publishing grant and returned X capabilities.                   |
 | Revision conflict             | Re-read current content and reconcile owner changes.                               |
 | Uncertain publication         | Inspect recorded outcomes and X; do not resend automatically.                      |
-| Routine saved but no output   | A live client must claim work; saving a routine does not launch one.               |
+| Generated preparation has no output | A live client must claim work; ordinary reminder routines need no AI runner.     |
+| Routine missing from Dashboard | It shows only up to five unfinished items today, due or within ten minutes; use View all. |
 
 Each independent owner needs their own appropriately isolated OwnPost workspace. The skills repository has no credentials and creates no shared workspace access.
 

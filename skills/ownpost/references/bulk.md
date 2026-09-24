@@ -8,7 +8,7 @@
 
 3. Bulk operations validate inputs first but commit content items independently. Inspect every ordered results entry (index, ok, result/error), succeededCount, and failedCount. Successful entries remain committed. Retry only failures after resolving their current state; for uncertain creates, inspect existing data before retrying.
 
-4. Post cleanup uses archive_posts. Permanent Inspiration/Suggestion cleanup requires an explicit request for the selected eligible items and confirm:"DELETE" on every item. Archive sources first only when the owner's requested cleanup includes that action.
+4. Post cleanup uses archive_posts. Permanent Idea cleanup requires an explicit request for the selected eligible items and confirm:"DELETE" on every item. Archive sources first only when the owner's requested cleanup includes that action.
 
 5. Dedicated create_posting_slots/delete_posting_slots use slots/ids with 1–100 entries and atomic behavior; they are different from these content batches.
 
@@ -16,4 +16,4 @@
 
 ## Tools covered
 
-`create_drafts`, `update_posts`, `schedule_posts`, `archive_posts`, `restore_posts`, `move_posts_to_drafts`, `skip_posts`, `update_posting_slots`, `create_inspirations`, `update_inspirations`, `archive_inspirations`, `restore_inspirations`, `permanently_delete_inspirations`, `create_suggestions`, `permanently_delete_suggestions`.
+`create_drafts`, `update_posts`, `schedule_posts`, `archive_posts`, `restore_posts`, `move_posts_to_drafts`, `skip_posts`, `update_posting_slots`, `create_inspirations`, `update_inspirations`, `archive_inspirations`, `restore_inspirations`, `permanently_delete_inspirations`.

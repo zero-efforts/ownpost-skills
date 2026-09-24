@@ -1,6 +1,6 @@
 ---
 name: ownpost-analytics
-description: "Analyze OwnPost post performance, reply activity, or writing quality; record screenshot metrics and propose evidence-based lessons."
+description: "Analyze OwnPost post performance or writing quality; record screenshot metrics and propose evidence-based lessons."
 ---
 
 # OwnPost — Analytics and learning
@@ -15,11 +15,10 @@ Honor pagination using returned cursors when more results are needed. A first pa
 
 ## Workflow
 
-1. Match the analysis to the request. For post performance, read get_performance_context and selected list_post_metrics history. For a post or reply writing critique, inspect the provided text or fetch get_post / list_reply_targets and get_assistant_context; analyze clarity, hook, relevance and voice directly. Read a supplied source link before assessing it, and ask for text only when essential context is inaccessible. Reuse saved preferences instead of asking the user to restate them.
+1. Match the analysis to the request. For post performance, read get_performance_context and selected list_post_metrics history. For a post writing critique, inspect the provided text or fetch get_post and get_assistant_context; analyze clarity, hook, relevance and voice directly. Read a supplied source link before assessing it, and ask for text only when essential context is inaccessible. Reuse saved preferences instead of asking the user to restate them.
 
-2. For “analyze my replies”, use list_reply_targets with status:replied or queue:history and get_assistant_overview for recorded reply activity; paginate beyond the default active view when needed. Use list_reply_opportunities when API state is relevant. Manual targets/drafts and overview reply counts are workspace-wide; API opportunities are account-scoped. Report writing observations or recorded activity separately from engagement: the MCP has no per-reply impressions/engagement metrics or reply analytics-sync tool.
 
-3. When asked to record a metrics screenshot, inspect visible evidence and use match_performance_screenshot with visibleText or the explicit postId. Resolve ambiguous matches before record_metric_snapshot. It records metrics for a confirmed published original post, not a reply target. Use observed measurements and the real observation time; omit unavailable values because unknown is not zero. After an uncertain write, read list_post_metrics before retrying because each call creates a snapshot. A request for analysis alone does not imply recording a snapshot.
+3. When asked to record a metrics screenshot, inspect visible evidence and use match_performance_screenshot with visibleText or the explicit postId. Resolve ambiguous matches before record_metric_snapshot. It records metrics for a confirmed published original post. Use observed measurements and the real observation time; omit unavailable values because unknown is not zero. After an uncertain write, read list_post_metrics before retrying because each call creates a snapshot. A request for analysis alone does not imply recording a snapshot.
 
 4. Give the useful result immediately: the strongest supported finding, the sample/time window actually available, and concrete next writing changes. The returned performance score is weighted, not a standard engagement rate. Distinguish missing data from poor performance and correlations from causes. A lack of measurements still permits a labeled writing critique; it cannot support performance rankings or growth claims.
 

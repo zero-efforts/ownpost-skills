@@ -1,4 +1,4 @@
 interface:
   display_name: "OwnPost: Routines and preparation"
   short_description: "Set up routines or complete preparation now"
-  default_prompt: "Use $ownpost-routines to prepare my weekday news brief."
+  default_prompt: "Use $ownpost-routines to prepare my weekday post drafts."

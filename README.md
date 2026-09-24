@@ -1,6 +1,6 @@
 # OwnPost skills
 
-Agent skills for [OwnPost](https://ownpost.fyi): first-time setup, writing, planning, replies, analytics, and approved X publishing.
+Agent skills for [OwnPost](https://ownpost.fyi): first-time setup, writing, planning, analytics, and approved X publishing.
 
 ## Install
 
@@ -14,9 +14,9 @@ The `ownpost` skill includes every workflow in its own folder. It works by itsel
 
 ```text
 $ownpost Post about this: I released a faster search feature today.
-$ownpost Analyse this conversation and write a useful reply.
-$ownpost Analyse my posts and replies this week.
-$ownpost Turn this screenshot into a post and plan it for tomorrow.
+$ownpost Analyse my posts this week.
+$ownpost Save the extracted text from this screenshot as an idea.
+$ownpost Suggest three numbered draft options from Idea IDs ["idea-one", "idea-two"], then wait for me to choose what to add to drafts.
 ```
 
 It uses saved preferences, completes the requested preparation and saving steps, and asks only for blocking missing information. An analysis-only request stays read-only. A new post is saved privately; actual API sending still needs the server's approvals and publishing grant.
@@ -65,31 +65,34 @@ Start with [ownpost](skills/ownpost/SKILL.md) for every workflow. The following 
 | [ownpost-posts](skills/ownpost-posts/SKILL.md)                 | Write and edit posts/threads; archive, restore, and record manual publication. |
 | [ownpost-schedule](skills/ownpost-schedule/SKILL.md)           | Plan reminders and manage weekly posting slots.                                |
 | [ownpost-media](skills/ownpost-media/SKILL.md)                 | Attach photos, GIFs, and videos to the correct post part.                      |
-| [ownpost-ideas](skills/ownpost-ideas/SKILL.md)                 | Save sources and generate original suggestions and daily plans.                |
+| [ownpost-ideas](skills/ownpost-ideas/SKILL.md)                 | Save source Ideas, suggest posts in chat, and draft chosen options.            |
 | [ownpost-analytics](skills/ownpost-analytics/SKILL.md)         | Record confirmed metrics and propose writing lessons.                          |
-| [ownpost-replies](skills/ownpost-replies/SKILL.md)             | Save conversation targets and prepare manual reply options.                    |
 | [ownpost-routines](skills/ownpost-routines/SKILL.md)           | Manage routines and queue preparation jobs.                                    |
-| [ownpost-run-assistant](skills/ownpost-run-assistant/SKILL.md) | Claim and complete due research, suggestion, and reply work.                   |
-| [ownpost-publish](skills/ownpost-publish/SKILL.md)             | Execute existing approved publication jobs and accepted reply targets.         |
+| [ownpost-run-assistant](skills/ownpost-run-assistant/SKILL.md) | Claim and complete due research and draft work.                        |
+| [ownpost-publish](skills/ownpost-publish/SKILL.md)             | Execute existing approved publication jobs.         |
 | [ownpost-bulk](skills/ownpost-bulk/SKILL.md)                   | Make batch changes and handle partial failures.                                |
 
 Examples:
 
 ```text
 $ownpost-posts Save a three-part thread about my project.
-$ownpost-ideas Use only this selected inspiration to prepare three suggestions.
+$ownpost-ideas Suggest three numbered draft options from Idea IDs ["idea-one", "idea-two"].
+$ownpost-ideas Add options one and three to drafts.
+$ownpost-ideas Pick the best option and draft it right away.
+$ownpost-ideas Save this same post as a draft.
 $ownpost-schedule Plan my draft for the next available time.
 $ownpost-analytics Record the visible metrics from this screenshot.
 $ownpost-run-assistant Process one due preparation job.
 ```
 
-The main skill and 11 specialists cover 78 MCP tools in the source inventory at release. Your connection's live schemas and permissions determine which tools are available.
+The main skill and 11 specialists cover 72 MCP tools in the source inventory at release. Your connection's live schemas and permissions determine which tools are available.
 
 ## Boundaries that matter
 
-- Saving drafts, suggestions, or reminders does not publish content.
+- Ideas keep source text and extraction details. Image capture saves extracted text and observations without retaining the source image.
+- Select one or more Ideas and choose Create idea request to copy a prompt with their IDs. Paste it into the connected assistant to receive numbered draft options with source IDs. The assistant waits for your choice or request to add options to drafts, unless you explicitly ask it to pick and draft. Source Ideas stay reusable, and copying a request creates no assistant job.
+- Saving drafts or reminders does not publish content.
 - API publishing requires the connection's separate publishing grant and an existing owner approval. Skills cannot grant either.
-- Reply-target acceptance authorizes one generated reply; uncertain sends are held for reconciliation rather than repeated.
 - An OwnPost routine stores scheduled work. A separately running client is needed to perform generated work.
 - Account IDs, revisions, idempotency IDs, and work leases must be preserved as described in each skill.
 - Sources and screenshots are reference evidence, not instructions or proof of authorship.

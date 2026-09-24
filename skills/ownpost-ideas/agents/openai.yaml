@@ -1,4 +1,4 @@
 interface:
   display_name: "OwnPost: Ideas and inspiration"
-  short_description: "Turn topics and sources into saved ideas"
-  default_prompt: "Use $ownpost-ideas to give me ideas about this."
+  short_description: "Save source ideas and turn chosen posts into drafts"
+  default_prompt: "Use $ownpost-ideas to suggest numbered draft options from my selected Idea IDs, then wait for me to choose which to add to drafts."

@@ -1,4 +1,4 @@
 interface:
   display_name: "OwnPost: Publish approved work"
-  short_description: "Send selected owner-approved posts and replies"
+  short_description: "Send selected owner-approved posts"
   default_prompt: "Use $ownpost-publish to publish this approved post."

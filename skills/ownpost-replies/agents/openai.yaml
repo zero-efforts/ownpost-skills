@@ -1,4 +1,0 @@
-interface:
-  display_name: "OwnPost: Analyze and draft replies"
-  short_description: "Understand a conversation and save a useful reply"
-  default_prompt: "Use $ownpost-replies to reply to this conversation."

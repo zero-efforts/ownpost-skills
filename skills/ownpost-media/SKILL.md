@@ -21,7 +21,7 @@ Honor pagination using returned cursors when more results are needed. A first pa
 
 3. If the request also asks for a new post, write from the supplied brief and get_assistant_context, save it using create_draft with a reusable clientRequestId, then attach to its returned part ID. If a file is required but unavailable, explain exactly what is needed; a filename or inaccessible URL is not image bytes.
 
-4. After an uncertain upload, read list_media before retrying. Return the saved attachment, destination post/part and any failed addition. There is no MCP media-delete tool; direct removal or replacement that needs deletion to the app. A screenshot requested as source material belongs in create_image_inspiration instead of attaching it to a post.
+4. After an uncertain upload, read list_media before retrying. Return the saved attachment, destination post/part and any failed addition. There is no MCP media-delete tool; direct removal or replacement that needs deletion to the app. For a screenshot used as source material, inspect it and save only the extracted text and observations through create_image_inspiration when Idea capture is requested. Attach source images to a post only when the user requests an attachment.
 
 ## Tools covered
 

@@ -1,4 +1,4 @@
 interface:
-  display_name: "OwnPost: Analyze posts and replies"
-  short_description: "Review performance, replies and writing quality"
-  default_prompt: "Use $ownpost-analytics to analyze my replies and suggest improvements."
+  display_name: "OwnPost: Analyze posts"
+  short_description: "Review performance and writing quality"
+  default_prompt: "Use $ownpost-analytics to analyze my posts and suggest improvements."

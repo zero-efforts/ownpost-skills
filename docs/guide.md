@@ -15,30 +15,33 @@ Use `$ownpost` for any of these. It chooses the necessary workflow internally; i
 | Ask                                               | Result                                                                                |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | Post about this, with supplied text or screenshot | Reads saved voice/preferences and saves one original draft.                           |
+| Save this screenshot as an idea                   | Saves extracted text and observations without retaining the image.                    |
+| Paste a Create idea request with selected IDs    | Reads only those Ideas and shows numbered draft options with source IDs in chat.       |
+| Add options one and three to drafts              | Saves only those choices as private drafts, keeping the source Ideas.                  |
+| Pick an idea and draft it right away              | Chooses suitable content and saves a private draft, keeping the source Idea.          |
+| Save this same post as a draft                    | Copies the selected text into a private draft.                                        |
 | Write a thread and attach this photo              | Saves the requested thread and attaches the photo to the specified part.              |
 | Plan this draft for tomorrow                      | Reads real choices and saves a manual reminder in workspace time.                     |
-| Analyse this conversation and reply               | Reads the real conversation, chooses a useful angle, and saves a reply.               |
-| Analyse my replies this week                      | Reviews available reply wording, activity and delivery outcomes; reports data limits. |
 | Analyse this draft, do not change it              | Gives a critique without writing.                                                     |
-| Prepare today's news brief now                    | Creates/claims the requested job and completes supported outputs in the same session. |
+| Prepare today's post drafts now                    | Creates/claims the requested job and completes supported outputs in the same session. |
 | Publish this approved job now                     | Checks capabilities and executes the existing eligible approval.                      |
 
 Ordinary requests do not start onboarding or ask again for saved preferences. Missing source text, an ambiguous target, or a missing server approval can still require your input. If part of a combined request is blocked, the skill finishes independent authorized steps and reports the remaining action.
 
-Reply analysis includes wording quality, manual reply activity and API delivery outcomes. Per-reply impressions, likes, engagement rates, and follower attribution are not available through the current MCP tools. Manual reply history and reply progress are workspace-wide; API reply opportunities are account-scoped. Original-post metric snapshots cannot store reply metrics.
+To request options from the app, select one or more saved Ideas, choose Create idea request, and copy the prompt into your connected assistant. The prompt contains the selected Idea IDs and asks for three numbered options. The agent waits for your choice before saving; copying the prompt creates no assistant job. You can also explicitly ask the agent to pick an option and draft immediately.
+
 
 ## Specialist shortcuts
 
 You can keep using these tags if you installed the corresponding optional specialist. With `$ownpost`, simply describe the same task:
 
 1. Use ownpost-setup for timezone, topics, audience, posting slots, and quiet hours.
-2. Use ownpost-ideas for selected sources and original suggestions.
+2. Use ownpost-ideas to save source material, suggest posts in chat, and draft chosen or delegated options.
 3. Use ownpost-posts to save/edit a draft and ownpost-media for attachments.
 4. Use ownpost-schedule for manual reminders. A reminder is not API authorization.
 5. Publish manually, then report the actual publication. For API delivery, approve the content in OwnPost and use ownpost-publish only with the separate connection grant.
 6. Use ownpost-analytics to record real measurements and propose lessons for owner review.
 
-Use ownpost-replies for manual reply preparation. Use ownpost-routines plus a separately configured running client for ongoing preparation; ownpost-run-assistant processes leased jobs.
 
 ## Access and troubleshooting
 
